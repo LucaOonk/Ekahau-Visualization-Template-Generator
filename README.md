@@ -17,4 +17,5 @@ For more information on where to use the output in your template visit: https://
 
 Disclaimer: I am not in any way affiliated with Ekahau. I created ths software just to make the creation of Word Templates much easier and more reliable.
 
-Buy me a coffee [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/lucaoonk)
+Buy me a coffee 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/lucaoonk)
