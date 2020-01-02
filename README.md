@@ -16,3 +16,5 @@ You can edit the following:
 For more information on where to use the output in your template visit: https://support.ekahau.com/hc/en-us/sections/115001529668-Template-Reporting
 
 Disclaimer: I am not in any way affiliated with Ekahau. I created ths software just to make the creation of Word Templates much easier and more reliable.
+
+Buy me a coffee [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/lucaoonk)
