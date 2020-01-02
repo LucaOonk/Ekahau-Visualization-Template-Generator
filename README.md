@@ -13,6 +13,6 @@ You can edit the following:
 - Toggle the display of walls in the visualization
 - Set custom sizing for the visualization, legend and/or statistics
 
-For more information visit: https://support.ekahau.com/hc/en-us/sections/115001529668-Template-Reporting
+For more information on where to use the output in your template visit: https://support.ekahau.com/hc/en-us/sections/115001529668-Template-Reporting
 
 Disclaimer: I am not in any way affiliated with Ekahau. I created ths software just to make the creation of Word Templates much easier and more reliable.
