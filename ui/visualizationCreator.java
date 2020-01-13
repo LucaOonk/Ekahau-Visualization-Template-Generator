@@ -113,7 +113,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JComboBox showAPS() {
 
-        String[] options = {"ALL","MY"};
+        String[] options = {"NONE", "ALL","MY"};
         JComboBox c1 = new JComboBox<String>(options);
         this.showAPS = c1;
 

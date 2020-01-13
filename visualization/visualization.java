@@ -266,8 +266,15 @@ this.done = true;
 
         if(this.visualizationType.equals(visualizationTypes.Type.HEATMAP)){
         
+            if(this.setHeatmapType != HeatmapTypes.NONE){
+                outString = outString + ",";
+
+
+            }else{
+
+
+            }
         
-            outString = outString + ",";
 
         }
 
