@@ -111,7 +111,6 @@ public class visualization {
 
     public visualization() {
 
-        // this.setHeatmapOptions = new heatmapOptions();
         this.visualizationType = Type.NONE;
         this.displayAPS = DisplayAPS.NONE;
         this.sOptions = sizeOptions.NONE;
@@ -128,8 +127,6 @@ public class visualization {
 
         this.visualizationType = type;
         this.template = template + visualizationTypes.typeCheck(type);
-
-        // this.template = template + endType;
     }
 
     private void prepTemplate() {
@@ -171,8 +168,10 @@ public class visualization {
 
         this.template = template + endType;
 
-        // System.out.println(this.setHeatmapType + " Dit is de type");
-        //this, Set Heatmap Specific Optuins
+        /*
+        //this, Set Heatmap Specific Options
+        */
+        
         this.template = template + endString;
 
         
@@ -272,6 +271,7 @@ this.done = true;
 
         }
 
+            //Resolves the Bands ENUM to String for the visualization
         
         
             outString = outString + '"'+ "filter"+ '"'+":{"+ '"' + "include" + '"' + ':' + '{' ;

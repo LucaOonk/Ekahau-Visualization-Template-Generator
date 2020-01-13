@@ -289,8 +289,6 @@ public class visualizationCreator extends JPanel implements ActionListener {
         GridBagConstraints c = new GridBagConstraints();
         setLayout(layout);
 
-
-        // add(this.textArea);
         c.gridy = 1;
         c.gridx = 1;
         add(new JLabel("Visualization Type:"), c);
