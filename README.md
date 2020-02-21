@@ -15,6 +15,8 @@ You can edit the following:
 
 For more information on where to use the output in your template visit: https://support.ekahau.com/hc/en-us/sections/115001529668-Template-Reporting
 
+You can download the MacOS executable by downloading this project and by going to the Releases folder.
+
 Disclaimer: I am not in any way affiliated with Ekahau. I created ths software just to make the creation of Word Templates much easier and more reliable.
 
 Buy me a coffee 
