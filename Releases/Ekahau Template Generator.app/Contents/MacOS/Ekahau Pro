@@ -1,0 +1,20 @@
+#!/bin/sh
+# execute 
+# application settings
+APP=$0
+APP_DIR=`dirname "$APP"`
+
+cd "$APP_DIR"/../../
+APP_BUNDLE_ROOT=`pwd`
+
+INFO_PLIST="${APP_BUNDLE_ROOT}"/Contents/Info.plist
+BUNDLE_JAVA_DIR="${APP_BUNDLE_ROOT}"/Contents/Java
+BUNDLE_RES_DIR="${APP_BUNDLE_ROOT}"/Contents/Resources
+
+JAVACMD=${APP_BUNDLE_ROOT}/Contents/PlugIns/jre/Contents/Home/bin/java
+
+cd $BUNDLE_JAVA_DIR
+
+java -Dfile.encoding=UTF-8 -cp "${BUNDLE_JAVA_DIR}"/lib ui.launcer 
+
+exit $?

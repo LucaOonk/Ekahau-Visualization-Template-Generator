@@ -1,7 +1,6 @@
 package ui;
 
 import java.awt.Component;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,7 +29,6 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JButton applyButton;
     private visualization result;
-    private Container parent;
     private JComboBox comboBoxHeatmap;
     private JComboBox comboBoxHeatmapType;
     private JCheckBox checkBoxWalls;
@@ -60,7 +58,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
     
     private JCheckBox checkBoxWalls() {
 
-        JCheckBox c1 = new JCheckBox("Show Walls");
+        final JCheckBox c1 = new JCheckBox("Show Walls");
         this.checkBoxWalls = c1;
 
         return c1;
@@ -68,7 +66,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JCheckBox checkBoxLegend() {
 
-        JCheckBox c1 = new JCheckBox("Show Legend");
+        final JCheckBox c1 = new JCheckBox("Show Legend");
         this.checkBoxLegend = c1;
 
         return c1;
@@ -76,7 +74,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JCheckBox checkBoxStatistics() {
 
-        JCheckBox c1 = new JCheckBox("Show Statistics");
+        final JCheckBox c1 = new JCheckBox("Show Statistics");
         this.checkBoxStatistics = c1;
 
         return c1;
@@ -84,7 +82,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JTextArea setTextArea(){
 
-        JTextArea c1 = new JTextArea();
+        final JTextArea c1 = new JTextArea();
         c1.setText(this.result.getVisualization());
         c1.setPreferredSize(new Dimension(400, 150));
         c1.setLineWrap(true);
@@ -95,8 +93,8 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JComboBox comboBoxHeatmap() {
 
-        String[] options = new heatmap().values;
-        JComboBox c1 = new JComboBox<String>(options);
+        final String[] options = new heatmap().values;
+        final JComboBox c1 = new JComboBox<String>(options);
         this.comboBoxHeatmap = c1;
 
         return c1;
@@ -104,8 +102,8 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JComboBox comboAPBands() {
 
-        String[] options = {"ALL","2.4GHz only","5GHz only"};
-        JComboBox c1 = new JComboBox<String>(options);
+        final String[] options = {"ALL","2.4GHz only","5GHz only"};
+        final JComboBox c1 = new JComboBox<String>(options);
         this.apBands = c1;
 
         return c1;
@@ -113,8 +111,8 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JComboBox showAPS() {
 
-        String[] options = {"NONE", "ALL","MY"};
-        JComboBox c1 = new JComboBox<String>(options);
+        final String[] options = {"NONE", "ALL","MY"};
+        final JComboBox c1 = new JComboBox<String>(options);
         this.showAPS = c1;
 
         return c1;
@@ -122,8 +120,8 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JComboBox comboBoxHeatmapType() {
 
-        String[] options = new heatmapOptions().values;
-        JComboBox c1 = new JComboBox<String>(options);
+        final String[] options = new heatmapOptions().values;
+        final JComboBox c1 = new JComboBox<String>(options);
         this.comboBoxHeatmapType = c1;
 
         return c1;
@@ -131,7 +129,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JTextField visualizationWidthinput(){
 
-        JTextField c1 = new JTextField(3);
+        final JTextField c1 = new JTextField(3);
         this.visualizationWidthInput = c1;
 
         return c1;
@@ -139,7 +137,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JTextField legendWidthinput(){
 
-        JTextField c1 = new JTextField(3);
+        final JTextField c1 = new JTextField(3);
         this.legendWidthInput = c1;
 
         return c1;
@@ -147,7 +145,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JTextField statisticsWidthinput(){
 
-        JTextField c1 = new JTextField(3);
+        final JTextField c1 = new JTextField(3);
         this.statisticsWidthInput = c1;
 
         return c1;
@@ -167,7 +165,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
         resoleInputToVisualization();
         System.out.println("Triggerd");
         System.out.println(this.result.getVisualization());
@@ -189,7 +187,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
         if (this.comboBoxHeatmapType.getSelectedItem().toString() == "HEATMAP") {
             this.result.addVisualizationType(visualizationTypes.Type.HEATMAP);
-            HeatmapTypes t1 = new heatmap().stringToType(this.comboBoxHeatmap.getSelectedItem().toString());
+            final HeatmapTypes t1 = new heatmap().stringToType(this.comboBoxHeatmap.getSelectedItem().toString());
             this.result.setHeatmapType(t1);
         }
 
@@ -213,24 +211,24 @@ public class visualizationCreator extends JPanel implements ActionListener {
             this.result.showMyAPS();
         }
         if(this.visualizationWidthInput.getText().toString() != ""){
-            String input = this.visualizationWidthInput.getText().toString();
+            final String input = this.visualizationWidthInput.getText().toString();
             int size;
             try {
                 size = Integer.parseInt(input);
                 this.result.addWidth(size);
             }
-            catch (NumberFormatException e)
+            catch (final NumberFormatException e)
             {
             }
         }
         if(this.visualizationWidthInput.getText().toString() != ""){
-            String input = this.visualizationWidthInput.getText().toString();
+            final String input = this.visualizationWidthInput.getText().toString();
             int size;
             try {
                 size = Integer.parseInt(input);
                 this.result.addWidth(size);
             }
-            catch (NumberFormatException e)
+            catch (final NumberFormatException e)
             {
             }
         }
@@ -242,13 +240,13 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
         if(this.checkBoxLegend.isSelected() == true){
             if(this.legendWidthInput.getText().toString() != ""){
-                String input = this.legendWidthInput.getText().toString();
+                final String input = this.legendWidthInput.getText().toString();
                 int size;
                 try {
                     size = Integer.parseInt(input);
                     this.result.showLegend(size, sizeOptions.WIDTH);
                 }
-                catch (NumberFormatException e)
+                catch (final NumberFormatException e)
                 {
                     this.result.showLegend();
 
@@ -260,13 +258,13 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
         if(this.checkBoxStatistics.isSelected() == true){
             if(this.statisticsWidthInput.getText().toString() != ""){
-                String input = this.statisticsWidthInput.getText().toString();
+                final String input = this.statisticsWidthInput.getText().toString();
                 int size;
                 try {
                     size = Integer.parseInt(input);
                     this.result.showStatistics(size, sizeOptions.WIDTH);
                 }
-                catch (NumberFormatException e)
+                catch (final NumberFormatException e)
                 {
                     this.result.showStatistics();
 
