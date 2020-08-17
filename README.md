@@ -1,7 +1,7 @@
 # Ekahau-Visualization-Template-Generator
 A small Java GUI application that helps generating visualization tags for template reporting
 
-This application creates reliable visulization tags that you can use when creating your reporting templates. With just a couple of clicks you can generate customized visualization tags that you can paste in you Word Template for Ekahau Site Survey.
+This application creates reliable visulization tags that you can use when creating your reporting templates. With just a couple of clicks you can generate customized visualization tags that you can paste in you Word Template for Ekahau Site Survey and Ekahau Pro.
 
 ![alt text](https://github.com/LucaOonk/LucaOonk.github.io/blob/master/depictions/Ekahau-Template-Generator/GUI.png)
 
@@ -15,9 +15,7 @@ You can edit the following:
 
 For more information on where to use the output in your template visit: https://support.ekahau.com/hc/en-us/sections/115001529668-Template-Reporting
 
-You can download the MacOS executable by downloading this project and by going to the Releases folder.
-
-Disclaimer: I am not in any way affiliated with Ekahau. I created ths software just to make the creation of Word Templates much easier and more reliable.
+Disclaimer: I am not in any way affiliated with Ekahau. I created this software just to make the creation of Word Templates much easier and more reliable.
 
 Buy me a coffee 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/lucaoonk)
