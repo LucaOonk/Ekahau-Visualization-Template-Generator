@@ -27,6 +27,7 @@ public class mainFrame extends JFrame {
         
         packContent(mainFrame);
         pack();
+        mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
 
     }

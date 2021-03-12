@@ -32,6 +32,8 @@ public class visualizationCreator extends JPanel implements ActionListener {
     private JComboBox comboBoxHeatmap;
     private JComboBox comboBoxHeatmapType;
     private JCheckBox checkBoxWalls;
+    private JCheckBox checkBoxCoverageAreas;
+
     private JTextArea textArea;
     private JCheckBox checkBoxLegend;
     private JCheckBox checkBoxStatistics;
@@ -60,6 +62,14 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
         final JCheckBox c1 = new JCheckBox("Show Walls");
         this.checkBoxWalls = c1;
+
+        return c1;
+    }
+
+    private JCheckBox checkBoxCoverageAreas() {
+
+        final JCheckBox c1 = new JCheckBox("Show Coverage Areas");
+        this.checkBoxCoverageAreas = c1;
 
         return c1;
     }
@@ -111,7 +121,7 @@ public class visualizationCreator extends JPanel implements ActionListener {
 
     private JComboBox showAPS() {
 
-        final String[] options = {"NONE", "ALL","MY"};
+        final String[] options = {"NONE", "ALL","MY", "SIMULATED"};
         final JComboBox c1 = new JComboBox<String>(options);
         this.showAPS = c1;
 
@@ -210,6 +220,10 @@ public class visualizationCreator extends JPanel implements ActionListener {
         if (this.showAPS.getSelectedItem().toString() == "MY") {
             this.result.showMyAPS();
         }
+        if (this.showAPS.getSelectedItem().toString() == "SIMULATED") {
+            this.result.showSimulatedAPS();
+
+        }
         if(this.visualizationWidthInput.getText().toString() != ""){
             final String input = this.visualizationWidthInput.getText().toString();
             int size;
@@ -236,6 +250,13 @@ public class visualizationCreator extends JPanel implements ActionListener {
         
         if(this.checkBoxWalls.isSelected() == true){
             this.result.showWalls();
+        }
+
+        if(this.checkBoxCoverageAreas.isSelected() == true){
+            result.showCoverageAreas(true);
+        }else{
+            result.showCoverageAreas(false);
+
         }
 
         if(this.checkBoxLegend.isSelected() == true){
@@ -274,6 +295,8 @@ public class visualizationCreator extends JPanel implements ActionListener {
             }
             
         }
+
+
 
     }
 
@@ -329,6 +352,10 @@ public class visualizationCreator extends JPanel implements ActionListener {
         c.gridy = 4;
         c.gridx = 3;
         add(checkBoxStatistics(), c);
+        c.gridy = 5;
+        c.gridx = 3;
+        add(checkBoxCoverageAreas(), c);
+        
 
         c.gridy = 5;
         c.gridx = 1;

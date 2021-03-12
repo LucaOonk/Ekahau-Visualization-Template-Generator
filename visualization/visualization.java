@@ -30,12 +30,13 @@ public class visualization {
     private int statisticsvalue;
     private boolean showWalls;
     private boolean done;
+    private boolean showCoverage;
 
     private aps.Bands APBands;
 
     public enum DisplayAPS {
 
-        NONE, MY, ALL;
+        NONE, MY, ALL, SIMULATED;
 
     };
 
@@ -54,6 +55,12 @@ public class visualization {
 
     }
 
+    public void showCoverageAreas(Boolean in) {
+
+        this.showCoverage = in;
+
+    }
+    
     public void showLegend(int value, sizeOptions width) {
 
         this.showLegend = true;
@@ -90,6 +97,7 @@ public class visualization {
         }
 
     }
+
 
     public void showWalls() {
 
@@ -166,6 +174,10 @@ public class visualization {
 
         }
 
+        if(this.showCoverage){
+            this.template = template + ',' + '"' + "coverage-areas" + '"'+ ":" + '"'+ "true" +'"';
+        }
+
         this.template = template + endType;
 
         /*
@@ -198,12 +210,15 @@ public class visualization {
             }
             this.template = template + "\n"+ l1.getStatistics();
         }
+
+
+        
     
     }
-this.done = true;
-}else{
+            this.done = true;
+        }else{
 
-}
+    }
     }
 
     public void showMyAPS(){
@@ -212,6 +227,11 @@ this.done = true;
         
     }
 
+    public void showSimulatedAPS(){
+        
+        this.displayAPS = DisplayAPS.SIMULATED;
+        
+    }
     public void showAllAPS(){
         
         this.displayAPS = DisplayAPS.ALL;

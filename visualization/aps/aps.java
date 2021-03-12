@@ -32,6 +32,10 @@ public class aps{
             outString = outString + '"'+ "filter"+ '"'+":{"+ '"' + "include" + '"' + ':' + '{' + '"' + "owner" + '"' + ':' + '"' +"my" + '"' + '}' + '}';
         }
 
+        if(input == DisplayAPS.SIMULATED) {
+           
+            outString = outString + '"'+ "type"+ '"'+":"+ '"' + "simulated" + '"' + '}';
+        }
 
         outString = outString + "}";
 
