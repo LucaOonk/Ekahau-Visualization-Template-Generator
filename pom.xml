@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.lucaoonk.ekahau_visualization_Template_Generator</groupId>
+  <artifactId>ekahau_visualization_Template_Generator</artifactId>
+  <packaging>jar</packaging>
+  <version>0.4.1</version>
+  <name>ekahau_visualization_Template_Generator</name>
+  <url>http://maven.apache.org</url>
+
+  
+  <properties>
+    <project.build.java.version>1.7</project.build.java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <org.apache.maven.plugins.maven-compiler-plugin.version>2.5.1</org.apache.maven.plugins.maven-compiler-plugin.version>          
+  </properties>
+  <dependencies>
+  </dependencies>
+
+
+  <build>
+   <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${project.build.java.version}</source>
+            <target>${project.build.java.version}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.3</version>
+          <configuration>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+              <manifest>
+                <mainClass>com.lucaoonk.ekahau_visualization_Template_Generator.ui.launcher</mainClass>
+              </manifest>
+            </archive>
+            <finalName>ekahau_visualization_Template_Generator</finalName>
+            <appendAssemblyId>false</appendAssemblyId>
+          </configuration>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
+      <groupId>de.perdian.maven.plugins</groupId>
+	    <artifactId>macosappbundler-maven-plugin</artifactId>
+	    <version>1.10.2</version>
+	    <configuration>
+		  <plist>
+			  <CFBundleDisplayName>Ekahau Visualization Template Generator</CFBundleDisplayName>
+			  <CFBundleName>Ekahau Visualization Template Generator</CFBundleName>
+			  <JVMMainClassName>com.lucaoonk.ekahau_visualization_Template_Generator.ui.launcher</JVMMainClassName>
+        <NSHighResolutionCapable>true</NSHighResolutionCapable>
+		  </plist>
+		  <dmg>
+			  <generate>false</generate>
+			  <autoFallback>true</autoFallback>
+		  </dmg>
+    	<jdk>
+			  <include>false</include>
+			  <location>/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk</location>
+		  </jdk>
+	  </configuration>
+	  <executions>
+		  <execution>
+			  <phase>package</phase>
+			  <goals>
+				  <goal>bundle</goal>
+			  </goals>
+		  </execution>
+	  </executions>
+    </plugin>
+    </plugins>
+  </build>
+</project>
