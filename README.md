@@ -15,9 +15,9 @@ You can edit the following:
 
 For more information on where to use the output in your template visit: https://support.ekahau.com/hc/en-us/sections/115001529668-Template-Reporting
 
-Only a MacOS .App for now, if and .EXE or .MSI is needed please contact me!
-Or make build it your self, the main Class is: ui/launcer/Main
-No libraries other than the standard are used.
+# How to build
+run `mvn clean package` it will create 2 Jar files and a .App file. The Jar-File without a versionnumber is runnable.
+
 
 Disclaimer: I am not in any way affiliated with Ekahau. I created this software just to make the creation of Word Templates much easier and more reliable.
 
